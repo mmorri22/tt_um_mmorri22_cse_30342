@@ -197,12 +197,17 @@ module fsm_design #(
    // Step 6 - Set up the count for the read-in and read-out
    // Step 6a - Logic for the Byte Count for the loop
    localparam int count_width = $clog2(N) -  $clog2(N_width);
-   localparam int count_max = ( 1 << count_width ) - 1;
    
    // Step 6b - Create the counter storage result itself
    logic [count_width-1:0] 			   byte_count;  
+	logic [count_width-1:0] count_max;
    
-   
+	initial
+		begin
+			count_max = ( 1 << count_width ) - 1;
+		end
+
+	
    // Step 7 - Set up the State Function
    always_ff @(posedge clk or negedge rst) begin
       
