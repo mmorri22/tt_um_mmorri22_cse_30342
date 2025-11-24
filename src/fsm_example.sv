@@ -530,10 +530,10 @@ module tt_um_mmorri22_cse_30342 (
     .input_enable(uio_in[1]),
     .a(ui_in[3:0]),
     .b(ui_in[7:4]),
-	  .op_val(uio_in[3:2]),  
+	.op_val(uio_in[3:2]),  
+    .state_res(uo_out[7:4]),	  
 	.output_valid(uio_out[4]),
-    .out(uo_out[3:0]),
-    .state_res(uo_out[7:4]),
+    .out(uo_out[3:0])
     );
 
   // avoid linter warning about unused pins:
