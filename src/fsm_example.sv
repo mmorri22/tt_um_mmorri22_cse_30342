@@ -166,7 +166,7 @@ module fsm_design #(
 
   // Step 3b - Set logic to hold results 
    logic [N-1:0] 				   result_reg;
-   logic [N-1:0]	               output_valid_reg;
+   logic 	               output_valid_reg;
  
 
    // Step 4 - Get the intermediate result wires for the outputs for each state
@@ -236,7 +236,7 @@ module fsm_design #(
           end
 	
         INPUT:
-          if (byte_count == count_max) begin
+			if (byte_count == count_max[N_width-1:0]) begin
 				next_state = S0;
              end
         
@@ -368,11 +368,14 @@ module fsm_design #(
            else if ( op_val == 2 || op_val == 3 )begin
               next_state = S7;
            end
-           
+
+			default: begin
+				next_state = IDLE; 
+			end
         end
         
         OUTPUT: begin
-           if (byte_count == count_max) begin
+           if (byte_count == count_max[N_width-1:0]) begin
               next_state = IDLE;
            end          
            
