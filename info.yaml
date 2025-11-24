@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "Notre Dame - CSE 30342 - Advanced FSM Final Project Example"      # Project title
+  title:        "Notre Dame - CSE 30342 - DIC - Advanced FSM Final Project Example"      # Project title
   author:       "Matthew Morrison"      # Your name
   discord:      "matt.morrison@nd.edu"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "Example of SystemVerilog code with FSM and IO pipelining."      # One line description of what your project does
