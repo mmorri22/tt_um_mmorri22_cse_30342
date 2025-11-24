@@ -376,15 +376,15 @@ module fsm_design #(
 
 		end
 
-			default:	next_state = IDLE; 
-        end
-        
+       
         OUTPUT: begin
            if (byte_count == count_max[N_width-1:0]) begin
               next_state = IDLE;
            end          
            
-        end        
+        end    
+
+		  		default:	next_state = IDLE; 
         
       endcase     
       
