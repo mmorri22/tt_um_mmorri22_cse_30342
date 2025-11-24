@@ -489,12 +489,13 @@ module fsm_design #(
 	  if (!rst) begin
 		result_reg <= '0;
 	  end 
-	  else if (state inside {S0, S1, S2, S3, S4, S5, S6, S7}) begin
+		else if (state == IDLE || state == INPUT || state == OUTPUT) begin
 		// capture the stage result once per cycle
-		result_reg <= out_driver_wire;
+		result_reg <= result_reg;
 	  end else begin
 		// IDLE / INPUT / OUTPUT: either hold or clear, your choice
-		result_reg <= result_reg;
+		
+		  result_reg <= out_driver_wire;
 		// or: result_reg <= '0;
 	  end
 	end
