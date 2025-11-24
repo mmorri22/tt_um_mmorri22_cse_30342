@@ -469,7 +469,8 @@ module fsm_design #(
            S4: out_driver_wire = S4_res_wire;
            S5: out_driver_wire = S5_res_wire;
            S6: out_driver_wire = S6_res_wire;
-           S7: out_driver_wire = S7_res_wire;       
+           S7: out_driver_wire = S7_res_wire;
+			 default: out_driver_wire = 0;  
          endcase
          
       end
