@@ -444,7 +444,7 @@ module fsm_design #(
       end
  
       // Step 11b - Otherwise, if in output, set the values to the output
-      else if (state == OUTPUT) begin
+	   else begin
          out = result_reg[byte_count*N_width +: N_width];	 
       end 
       
@@ -470,7 +470,7 @@ module fsm_design #(
            S5: out_driver_wire = S5_res_wire;
            S6: out_driver_wire = S6_res_wire;
            S7: out_driver_wire = S7_res_wire;
-			 default: out_driver_wire = 0;  
+			default: out_driver_wire = 0;  
          endcase
          
       end
