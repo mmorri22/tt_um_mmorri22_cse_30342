@@ -8,7 +8,9 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
-
+<br>
+This is an example final project SystemVerilog example for the CSE 30342 Digital Integrated Circuits course at the University of Notre Dame<br>
+<br>
 The objective of this project is to develop a robust finite-state machine that instructs students on how to implement a design in their final course project. Since the project requirement is that the Finite State Machine has at least five states (not including the IDLE, INPUT, and OUTPUT states) where at least two of those five have a self-feedback loop, and two of those five have an edge that goes backwards, this design goes to an extreme where every state has a self-feedback loop and every state has at least one edge that goes backwards. I will explain how this FSM meets the requirement in this report.<br>
 
 The require project diagram is listed below. In the student project, there will be a purpose behind the FSM, such as a vending machine or stop light or something the students have developed themselves. In this section, describe the purpose and operation of your design.<br>
