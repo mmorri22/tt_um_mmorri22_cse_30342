@@ -374,9 +374,9 @@ module fsm_design #(
               next_state = S7;
            end
 
-			default: begin
-				next_state = IDLE; 
-			end
+		end
+
+			default	next_state = IDLE; 
         end
         
         OUTPUT: begin
