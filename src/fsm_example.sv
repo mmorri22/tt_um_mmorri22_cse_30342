@@ -529,11 +529,11 @@ module tt_um_mmorri22_cse_30342 (
     .input_enable(uio_in[1]),
     .a(ui_in[3:0]),
     .b(ui_in[7:4]),
-    .output_valid(uio_out[2]),
+	.op_val(uio_in[3:2])  
+	.output_valid(uio_out[4]),
     .out(uo_out[3:0]),
     .state_res(uo_out[7:4]),
-    .op_val(uio_out[4:3])
-  );
+    );
 
   // avoid linter warning about unused pins:
   wire _unused_pins = ena;   
@@ -541,17 +541,15 @@ module tt_um_mmorri22_cse_30342 (
   // Assign enable paths 
   assign uio_oe[0] = 1'b0;
   assign uio_oe[1] = 1'b0;
-  assign uio_oe[2] = 1'b1;
-  assign uio_oe[3] = 1'b1;
+  assign uio_oe[2] = 1'b0;
+  assign uio_oe[3] = 1'b0;
   assign uio_oe[4] = 1'b1;
-  assign uio_oe[5] = 1'b1;
+  assign uio_oe[5] = _unused_pins;
   assign uio_oe[6] = _unused_pins;
   assign uio_oe[7] = _unused_pins;  
 
   // Set AND with the unused input signals
   // Reference - https://verilator.org/guide/latest/warnings.html#cmdoption-arg-UNUSEDSIGNAL
-  wire _unused_ok_2 = 1'b0 & uio_in[2];
-  wire _unused_ok_3 = 1'b0 & uio_in[3];
   wire _unused_ok_4 = 1'b0 & uio_in[4];
   wire _unused_ok_5 = 1'b0 & uio_in[5];
   wire _unused_ok_6 = 1'b0 & uio_in[6];
@@ -560,6 +558,8 @@ module tt_um_mmorri22_cse_30342 (
   // Assign usused pin to the unused uio_out  
   assign uio_out[0] = _unused_pins;
   assign uio_out[1] = _unused_pins;
+	assign uio_out[2] = _unused_pins;
+	assign uio_out[3] = _unused_pins;
   assign uio_out[5] = _unused_pins;
   assign uio_out[6] = _unused_pins;
   assign uio_out[7] = _unused_pins;  
