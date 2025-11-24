@@ -131,7 +131,7 @@ endmodule
 // Step 0a - Create a module with input / output variable
 module fsm_design #(
 			// Step 1a - Define parameters, if necessary
-		     parameter N = 64,
+		     parameter N = 32,
 		     parameter N_width = 4	
 		     )
 			( // Step 1b - Define all inputs and output
@@ -532,7 +532,7 @@ module tt_um_mmorri22_cse_30342 (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-  fsm_design #(.N(64), .N_width(4)) design_example(
+	fsm_design #(.N(32), .N_width(4)) design_example(
     .clk(clk),
     .rst(rst_n),
     .start(uio_in[0]),
