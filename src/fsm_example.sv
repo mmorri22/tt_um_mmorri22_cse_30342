@@ -131,7 +131,7 @@ endmodule
 // Step 0a - Create a module with input / output variable
 module fsm_design #(
 			// Step 1a - Define parameters, if necessary
-		     parameter N = 64,
+		     parameter N = 32,
 		     parameter N_width = 4	
 		     )
 			( // Step 1b - Define all inputs and output
