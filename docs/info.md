@@ -28,7 +28,7 @@ The project has 23 total pins, meeting the project requirement. To meet the inpu
 <br>
 In the INPUT state, the inputs for a and b are read in parallel, and are controlled using an input_enable signal. Parameter N is set to 128 by default, and N_width is set to 4. The INPUT state requires the input_enable signal to be positive to overwrite the previous result. This choice meets the requirement that there be at least one input that is 32-bits in length. The OUTPUT state pipelines the output on the out pin, and is controlled by sending an output_valid signal.<br>
 <br>
-![Visible FSM]([FSM.png])<br>
+![Visible FSM](FSM.png)<br>
 <br>
 In this design, we define the “internal states” as every state with the exception of IDLE, INPUT, and OUTPUT. Every internal state has a feedback loop and a return edge, with the exception of S0, which does not have a return edge, meeting the project requirements that at least two internal states have a feedback loop, and that two internal states have a return edge. For example, S1’s feedback loop occurs when op_val is 01, and its feedback loop occurs when op_val is 00, and its return edges are 00 (back to S0) and 01 (back to S5). In your report, list them explicitly to make the grading easier. For example:<br>
 To meet the project design requirements, the FSM is designed as follows<br>
