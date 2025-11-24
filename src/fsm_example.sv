@@ -161,7 +161,7 @@ module fsm_design #(
    // and this makes it easier for me to think of sequential elements   
    logic [N-1:0] 				   a_input_reg;
    logic [N-1:0] 				   b_input_reg;   
-   logic [2:0] 					   op_val_reg;
+	logic [1:0] 					   op_val_reg;
     
 
   // Step 3b - Set logic to hold results 
